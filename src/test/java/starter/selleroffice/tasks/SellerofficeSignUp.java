@@ -19,23 +19,23 @@ public class SellerofficeSignUp implements Task {
 
     private final String username_text;
     private final String password_text;
-    private final String password2_text;
+    private final String password_again_text;
     private final String email_text;
-    private final String email2_text;
+    private final String email_again_text;
     private final String shopname_text;
 
-    public SellerofficeSignUp(String username_text, String password_text, String password2_text, String email_text, String email2_text, String shopname_text) {
+    public SellerofficeSignUp(String username_text, String password_text, String password2_text, String email_text, String email_again_text, String shopname_text) {
         this.username_text = username_text;
         this.password_text = password_text;
-        this.password2_text = password2_text;
+        this.password_again_text = password2_text;
         this.email_text = email_text;
-        this.email2_text = email2_text;
+        this.email_again_text = email_again_text;
         this.shopname_text = shopname_text;
     }
 
-    public static Performable signUp(String username_text, String password_text, String password2_text, String email_text, String email2_text, String shopname_text) {
+    public static Performable signUp(String username_text, String password_text, String password_again_text, String email_text, String email2_text, String shopname_text) {
         return instrumented(starter.selleroffice.tasks.SellerofficeSignUp.class
-                , username_text, password_text, password2_text, email_text, email2_text, shopname_text);
+                , username_text, password_text, password_again_text, email_text, email2_text, shopname_text);
     }
 
 
@@ -51,11 +51,11 @@ public class SellerofficeSignUp implements Task {
                 Click.on(SellerofficeSignUpPageElements.PASSWORD_FIELD),
                 SendKeys.of(this.password_text).into(SellerofficeSignUpPageElements.PASSWORD_FIELD),
                 Click.on(SellerofficeSignUpPageElements.PASSWORD_RETYPE_FIELD),
-                SendKeys.of(this.password2_text).into(SellerofficeSignUpPageElements.PASSWORD_RETYPE_FIELD),
+                SendKeys.of(this.password_again_text).into(SellerofficeSignUpPageElements.PASSWORD_RETYPE_FIELD),
                 Click.on(SellerofficeSignUpPageElements.EMAIL_FIELD),
                 SendKeys.of(this.email_text).into(SellerofficeSignUpPageElements.EMAIL_FIELD),
                 Click.on(SellerofficeSignUpPageElements.EMAIL_RETYPE_FIELD),
-                SendKeys.of(this.email2_text).into(SellerofficeSignUpPageElements.EMAIL_RETYPE_FIELD),
+                SendKeys.of(this.email_again_text).into(SellerofficeSignUpPageElements.EMAIL_RETYPE_FIELD),
                 Click.on(SellerofficeSignUpPageElements.SHOPNAME_FIELD),
                 SendKeys.of(this.shopname_text).into(SellerofficeSignUpPageElements.SHOPNAME_FIELD),
                 Click.on(SellerofficeSignUpPageElements.REGISTER_BUTTON),
